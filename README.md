@@ -5,6 +5,8 @@ their barcode. Single page, Nord theme, no auth, no client-side config.
 
 ## Quick start
 
+Before you can start you need a DHL commercial account (Geschäftskundenportal) and an active app with the DHL Paket DE Versenden (Post & Paket Deutschland) API enabled (https://developer.dhl.com), either in sandbox mode for testing or production mode for production use. It is highly recommended to start with sandbox mode to ensure it works for you before cancelling actual labels. 
+
 ```bash
 cp .env.example .env
 # edit .env and fill in DHL_* credentials
