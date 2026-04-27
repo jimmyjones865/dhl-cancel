@@ -204,7 +204,7 @@ app.get("/healthz", async () => "ok");
 
 app.post("/cancel", async (req, reply) => {
   const raw = (req.body && (req.body.shipment ?? req.body.Shipment)) || "";
-  const shipment = String(raw).trim();
+  const shipment = String(raw).trim().replace(/[()]/g, "");
 
   if (!shipment) {
     return reply.code(400).send({ ok: false, message: "Keine Sendungsnummer übermittelt." });
