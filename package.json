@@ -1,0 +1,19 @@
+{
+  "name": "dhl-cancel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny self-hosted service to cancel DHL shipments by scanned barcode.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "@fastify/static": "^7.0.4",
+    "@fastify/formbody": "^7.4.0"
+  }
+}
