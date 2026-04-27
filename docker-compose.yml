@@ -1,7 +1,6 @@
 services:
   dhl-cancel:
     build: .
-    image: dhl-cancel:latest
     container_name: dhl-cancel
     restart: unless-stopped
     env_file: .env
