@@ -54,3 +54,5 @@ ports:
 - `GET  /`         — scanner page
 - `POST /cancel`   — body `{ "shipment": "00340..." }`, returns `{ ok: true }` or `{ ok: false, message: "..." }`
 - `GET  /healthz`  — `200 ok` for the Docker healthcheck
+
+Favicon: Fontawesome
