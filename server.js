@@ -51,6 +51,7 @@ async function fetchToken() {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body,
+    signal: AbortSignal.timeout(10_000),
   });
 
   let data = null;
@@ -97,6 +98,7 @@ async function cancelShipment(shipment) {
         "Accept-Language": "de-DE",
         Authorization: `Bearer ${token}`,
       },
+      signal: AbortSignal.timeout(15_000),
     });
 
   let token = await getToken();
