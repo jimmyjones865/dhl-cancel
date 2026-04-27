@@ -4,12 +4,16 @@
   const input = document.getElementById("scan");
   const banner = document.getElementById("banner");
   const indicator = document.getElementById("indicator");
+  const manualForm = document.getElementById("manual-form");
+  const manualInput = document.getElementById("manual");
 
   let busy = false;
   let resetTimer = null;
 
-  // Always keep focus on the hidden input so a scan "just types" into it.
+  // Always keep focus on the hidden input so a scan "just types" into it,
+  // unless the user is typing into the manual entry field.
   const focusInput = () => {
+    if (document.activeElement === manualInput) return;
     if (document.activeElement !== input) input.focus({ preventScroll: true });
   };
   focusInput();
@@ -91,5 +95,12 @@
       input.value = "";
       if (v) submit(v);
     }
+  });
+
+  manualForm.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    const v = manualInput.value.trim();
+    manualInput.value = "";
+    if (v) submit(v);
   });
 })();
