@@ -113,6 +113,35 @@
         font-size: 0.95rem;
         opacity: 0.85;
       }
+      /* Manual entry */
+      .manual {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      .manual input {
+        flex: 1;
+        max-width: 320px;
+        padding: 0.6rem 0.8rem;
+        border-radius: 8px;
+        border: 1px solid var(--nord3);
+        background: var(--nord1);
+        color: var(--nord6);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 1rem;
+      }
+      .manual input:focus { outline: 2px solid var(--nord8); }
+      .manual button {
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        border: 0;
+        background: var(--nord10);
+        color: var(--nord6);
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .manual button:hover { background: var(--nord9); }
       /* hidden but still focusable input that captures the scanner */
       .scan-input {
         position: absolute;
@@ -142,6 +171,19 @@
       <div class="banner idle" id="banner" role="status" aria-live="polite">
         <div class="status">—</div>
       </div>
+
+      <form class="manual" id="manual-form" autocomplete="off">
+        <input
+          id="manual"
+          type="text"
+          placeholder="Sendungsnummer manuell eingeben"
+          autocomplete="off"
+          autocapitalize="off"
+          autocorrect="off"
+          spellcheck="false"
+        />
+        <button type="submit">Stornieren</button>
+      </form>
 
       <input
         id="scan"
